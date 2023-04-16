@@ -1,0 +1,266 @@
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-image: radial-gradient(
+      circle at 82% 63%,
+      rgba(183, 183, 183, 0.09) 0%,
+      rgba(183, 183, 183, 0.09) 84%,
+      transparent 84%,
+      transparent 100%
+    ),
+    radial-gradient(
+      circle at 88% 98%,
+      rgba(232, 232, 232, 0.07) 0%,
+      rgba(232, 232, 232, 0.07) 15%,
+      transparent 15%,
+      transparent 100%
+    ),
+    radial-gradient(
+      circle at 77% 83%,
+      rgba(252, 252, 252, 0.05) 0%,
+      rgba(252, 252, 252, 0.05) 5%,
+      transparent 5%,
+      transparent 100%
+    ),
+    radial-gradient(
+      circle at 64% 0%,
+      rgba(140, 140, 140, 0.05) 0%,
+      rgba(140, 140, 140, 0.05) 54%,
+      transparent 54%,
+      transparent 100%
+    ),
+    radial-gradient(
+      circle at 57% 86%,
+      rgba(241, 241, 241, 0.07) 0%,
+      rgba(241, 241, 241, 0.07) 80%,
+      transparent 80%,
+      transparent 100%
+    ),
+    radial-gradient(
+      circle at 17% 93%,
+      rgba(68, 68, 68, 0.05) 0%,
+      rgba(68, 68, 68, 0.05) 82%,
+      transparent 82%,
+      transparent 100%
+    ),
+    radial-gradient(
+      circle at 85% 70%,
+      rgba(10, 10, 10, 0.02) 0%,
+      rgba(10, 10, 10, 0.02) 13%,
+      transparent 13%,
+      transparent 100%
+    ),
+    linear-gradient(90deg, rgb(48, 62, 175), rgb(254, 18, 105));
+}
+.App{
+  width: 80%;
+}
+.weather-info{
+  position: relative;
+  width: 100vh;
+  display: grid;
+  grid-template-columns:  70% 30%; 
+  grid-column-gap: 6px;
+}
+
+form {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+input[type="text"] {
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  margin-right: 10px;
+}
+
+button[type="submit"] {
+  background-color: #4caf50;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+button[type="submit"]:hover {
+  background-color: #3e8e41;
+  scale: 1.1;
+}
+.city-info{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-rule: 2px solid black;
+}
+
+p {
+  font-size: 24px;
+  font-weight: 500;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.error {
+  color: #f44336;
+  font-size: 18px;
+  margin-bottom: 10px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.weather-icon {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  font-size: 80px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+
+.sun {
+  font-size: 80px;
+  color: #fdd835;
+  animation: sun 4s linear infinite;
+}
+
+.cloud {
+  font-size: 80px;
+  color: #bababa;
+  animation: cloud 4s linear infinite;
+}
+
+.rain {
+  font-size: 80px;
+  color: #90caf9;
+  animation: rain 2s linear infinite;
+}
+.snow {
+  font-size: 80px;
+  color: #ffffff;
+  animation: snow 4s linear infinite;
+}
+
+.lightning {
+  font-size: 80px;
+  color: #ffd600;
+  animation: lightning 2s linear infinite;
+}
+
+.custom-loader {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100px;
+  height: 200px;
+  display: grid;
+  background:
+    linear-gradient(#766DF4 0 0) top/100% 2px,
+    radial-gradient(farthest-side at  top, #0000 calc(100% - 2px),#766DF4 calc(100% - 1px) ,#0000) top,
+    linear-gradient(#766DF4 0 0) bottom/100% 2px,
+    radial-gradient(farthest-side at  bottom, #0000 calc(100% - 2px),#766DF4 calc(100% - 1px) ,#0000) bottom;
+  background-size: 100% 1px,100% 50%; 
+  background-repeat: no-repeat;
+  animation: h8 4s infinite linear;
+}
+.custom-loader::before,
+.custom-loader::after {
+  content: "";
+  grid-area: 1/1;
+  background: inherit;
+  border:inherit;
+  animation: inherit;
+}
+
+.custom-loader::after {
+  animation-duration: 2s;
+}
+
+@keyframes h8 {
+  100% {transform: rotate(1turn)}
+}
+
+@keyframes sun {
+  0% {
+    transform: translateY(0px);
+  }
+  25% {
+    transform: translateX(-50px);
+  }
+  75% {
+    transform: translateX(50px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+@keyframes cloud {
+  0% {
+    transform: translateX(0px);
+  }
+  25% {
+    transform: translateX(-50px);
+  }
+  75% {
+    transform: translateX(50px);
+  }
+  100% {
+    transform: translateX(0px);
+  }
+}
+
+@keyframes rain {
+  0% {
+    transform: translateY(0px);
+  }
+  25% {
+    transform: translatey(-25px);
+  }
+  75% {
+    transform: translatey(25px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+@keyframes snow {
+  0% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  25% {
+    transform: translatey(-25px) rotate(60deg);
+  }
+  50% {
+    transform: translateY(0px) rotate(120deg);
+  }
+  75% {
+    transform: translatey(25px) rotate(240deg);
+  }
+  100% {
+    transform: translateY(0px) rotate(360deg);
+  }}
+
+@keyframes lightning {
+  0% {
+    transform: translateY(0px) rotate(30deg);
+  }
+  25% {
+    transform: translateY(-25px) rotate(-15deg);
+  }
+  50% {
+    transform: translateY(0px) rotate(15deg);
+  }
+  75% {
+    transform: translateY(25px) rotate(-15deg);
+  }
+  100% {
+    transform: translateY(0px) rotate(30deg);
+  }
+}
